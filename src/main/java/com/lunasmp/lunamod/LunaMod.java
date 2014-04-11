@@ -22,6 +22,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -33,7 +34,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class LunaMod {
 	
 	public static final String modid = "LunaMod";
-	public static final String version = "MC1.7.4";
+	public static final String version = "MC1.7.4_DEV";
 	
 	// Items
 	static Item FoodChocolateMilk;
@@ -45,8 +46,7 @@ public class LunaMod {
 	static Item FoodCookedLamb;
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event){
 		// I'm putting each item and food in a seperate class for now. This may change
 		// in the future!
 		ItemCup = new ItemCup();
@@ -60,18 +60,16 @@ public class LunaMod {
 		// Crafting
 		new CraftingManager();
 		
-		MinecraftForge.EVENT_BUS.register(new CustomEventHandler());
+		FMLCommonHandler.instance().bus().register(new CustomEventHandler());
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-		
+	public void init(FMLInitializationEvent event){
+
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event){
 		
 	}
 	
