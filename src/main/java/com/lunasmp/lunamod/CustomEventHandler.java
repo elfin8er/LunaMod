@@ -7,15 +7,14 @@ import net.minecraft.init.Items;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 public class CustomEventHandler {
-	
+
 	@SubscribeEvent
 	public void onDeath(LivingDeathEvent event) {
 		if(event.entityLiving.worldObj.isRemote)
 		return;
 		if(event.entity instanceof EntitySheep){
 			EntitySheep sheep = (EntitySheep) event.entity;
-			sheep.dropItem(LunaMod.FoodRawLamb, 1);
+			sheep.dropItem(LunaMod.FoodRawLamb, 0 + (int)(Math.random() * ((2 - 0) + 1)));
 		}
 	}
-
 }
