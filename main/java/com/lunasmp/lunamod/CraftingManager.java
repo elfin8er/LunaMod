@@ -53,7 +53,7 @@ public class CraftingManager {
 		});
 		
 		// Flour
-		GameRegistry.addShapelessRecipe(new ItemStack(LunaMod.ItemFlour), new Object[]{
+		GameRegistry.addShapelessRecipe(new ItemStack(LunaMod.ItemFlour, 3), new Object[]{
 			Items.wheat
 		});
 		
