@@ -8,19 +8,14 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ChocolateMilk extends ItemFood{
+public class ItemChocolateMilk extends ItemFood{
 
-	public ChocolateMilk(int restore, int i, boolean wolf) {
-		super(restore, i, wolf);
+	public ItemChocolateMilk(int restore, int saturation, boolean wolf) {
+		super(restore, saturation, wolf);
 		
 		this.setCreativeTab(CreativeTabs.tabFood);
 		this.setContainerItem(null);
 		this.setMaxStackSize(1);
 		GameRegistry.registerItem(this, "chocolateMilk");
 	}
-	
-	
-	
-		
-	
 }

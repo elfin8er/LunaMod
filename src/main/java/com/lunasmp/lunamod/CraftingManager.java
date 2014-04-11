@@ -18,6 +18,7 @@ public class CraftingManager {
 	    	"   ",
 	    	"C C",
 	    	" C ",
+	    	
 	    	'C', Items.clay_ball
 		});
 		
@@ -27,6 +28,16 @@ public class CraftingManager {
 			LunaMod.Cup,
 			LunaMod.Cup,
 			Items.milk_bucket
+		});
+		
+		// Hamburger
+		GameRegistry.addRecipe(new ItemStack(LunaMod.Hamburger), new Object[]{
+			"BBB",
+			"PPP",
+			"BBB",
+			
+			'B', Items.bread,
+			'P', Items.beef
 		});
 	}
 	

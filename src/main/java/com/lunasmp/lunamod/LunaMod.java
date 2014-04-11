@@ -32,15 +32,18 @@ public class LunaMod {
 	static Item ChocolateMilk;
 	static Item Cup;
 	static Item CupMilk;
+	static Item Hamburger;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		Cup = new Cup().setUnlocalizedName("cup").setTextureName(this.modid + ":" + "cup");
+		Cup = new ItemCup().setUnlocalizedName("cup").setTextureName(this.modid + ":" + "cup");
 		
-		ChocolateMilk = new ChocolateMilk(2, 0, false).setUnlocalizedName("chocolateMilk").setTextureName(this.modid + ":" + "chocolateMilk");
+		ChocolateMilk = new ItemChocolateMilk(2, 0, false).setUnlocalizedName("chocolateMilk").setTextureName(this.modid + ":" + "chocolateMilk");
 		
-		CupMilk = new CupMilk().setUnlocalizedName("cupMilk").setTextureName(this.modid + ":" + "cupMilk");
+		CupMilk = new ItemCupMilk().setUnlocalizedName("cupMilk").setTextureName(this.modid + ":" + "cupMilk");
+		
+		Hamburger = new ItemHamburger(6, 0.3F, false).setUnlocalizedName("hamburger").setTextureName(this.modid + ":" + "hamburger");
 		
 		// Crafting
 		new CraftingManager();
