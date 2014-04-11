@@ -44,6 +44,7 @@ public class LunaMod {
 	static Item FoodEggs;
 	static Item FoodRawLamb;
 	static Item FoodCookedLamb;
+	static Item FoodApplePie;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
@@ -56,6 +57,7 @@ public class LunaMod {
 		FoodEggs = new FoodEggs(3, 0.3F, false);
 		FoodRawLamb = new FoodRawLamb(3, 0.3F, false);
 		FoodCookedLamb = new FoodCookedLamb(6, 0.3F, false);
+		FoodApplePie = new FoodApplePie(8, 0.3F, false);
 		
 		// Crafting
 		new CraftingManager();

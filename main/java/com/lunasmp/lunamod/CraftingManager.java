@@ -45,6 +45,11 @@ public class CraftingManager {
 		
 		// Cooked Lamb
 		GameRegistry.addSmelting(LunaMod.FoodRawLamb, new ItemStack(LunaMod.FoodCookedLamb), 1F);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(LunaMod.FoodApplePie), new Object[]{
+			Items.sugar,
+			Items.apple
+		});
 	}
 	
 }
