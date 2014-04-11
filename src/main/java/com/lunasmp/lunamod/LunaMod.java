@@ -1,20 +1,27 @@
 /*
  * Feel free to add whatever you want to this mod. When we get a bunch of content added to it, we can
- * Use it for let's plays.
+ * Use it for let's plays. 
  * 
- * For now, this mod is going to stay private. Please don't share it with anyone outside of the group.
+ * Note that currently this MOD may not be compatible with Multiplayer. If anyone would like to keep it updated for multiplayer, that would be great!
+ *
  */
 
 package com.lunasmp.lunamod;
+
+import com.sun.xml.internal.stream.Entity;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -29,24 +36,31 @@ public class LunaMod {
 	public static final String version = "MC1.7.4";
 	
 	// Items
-	static Item ChocolateMilk;
-	static Item Cup;
-	static Item CupMilk;
-	static Item Hamburger;
+	static Item FoodChocolateMilk;
+	static Item ItemCup;
+	static Item ItemCupMilk;
+	static Item FoodHamburger;
+	static Item FoodEggs;
+	static Item FoodRawLamb;
+	static Item FoodCookedLamb;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		Cup = new ItemCup().setUnlocalizedName("cup").setTextureName(this.modid + ":" + "cup");
-		
-		ChocolateMilk = new ItemChocolateMilk(2, 0, false).setUnlocalizedName("chocolateMilk").setTextureName(this.modid + ":" + "chocolateMilk");
-		
-		CupMilk = new ItemCupMilk().setUnlocalizedName("cupMilk").setTextureName(this.modid + ":" + "cupMilk");
-		
-		Hamburger = new ItemHamburger(6, 0.3F, false).setUnlocalizedName("hamburger").setTextureName(this.modid + ":" + "hamburger");
+		// I'm putting each item and food in a seperate class for now. This may change
+		// in the future!
+		ItemCup = new ItemCup();
+		FoodChocolateMilk = new FoodChocolateMilk(2, 0, false);
+		ItemCupMilk = new ItemCupMilk();
+		FoodHamburger = new FoodHamburger(6, 0.3F, false);
+		FoodEggs = new FoodEggs(3, 0.3F, false);
+		FoodRawLamb = new FoodRawLamb(3, 0.3F, false);
+		FoodCookedLamb = new FoodCookedLamb(6, 0.3F, false);
 		
 		// Crafting
 		new CraftingManager();
+		
+		MinecraftForge.EVENT_BUS.register(new CustomEventHandler());
 	}
 
 	@EventHandler

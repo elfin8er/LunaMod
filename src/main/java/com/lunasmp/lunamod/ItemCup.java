@@ -8,7 +8,8 @@ public class ItemCup extends Item{
 
 	public ItemCup(){
 		this.setCreativeTab(CreativeTabs.tabMaterials);
-		this.setContainerItem(null);
+		this.setUnlocalizedName("cup");
+		this.setTextureName(LunaMod.modid + ":" + "cup");
 		GameRegistry.registerItem(this, "cup");
 	}
 	
