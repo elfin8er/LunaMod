@@ -46,9 +46,25 @@ public class CraftingManager {
 		// Cooked Lamb
 		GameRegistry.addSmelting(LunaMod.FoodRawLamb, new ItemStack(LunaMod.FoodCookedLamb), 1F);
 		
+		// Apple Pie
 		GameRegistry.addShapelessRecipe(new ItemStack(LunaMod.FoodApplePie), new Object[]{
 			Items.sugar,
 			Items.apple
+		});
+		
+		// Flour
+		GameRegistry.addShapelessRecipe(new ItemStack(LunaMod.ItemFlour), new Object[]{
+			Items.wheat
+		});
+		
+		// Dough
+		GameRegistry.addRecipe(new ItemStack(LunaMod.FoodHamburger), new Object[]{
+			"FFF",
+			"FWF",
+			"FFF",
+			
+			'F', LunaMod.ItemFlour,
+			'W', Items.water_bucket
 		});
 	}
 	
