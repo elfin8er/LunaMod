@@ -1,1 +1,0 @@
-To work on this mod, download it as a zip, extract it somewhere on your computer, and direct your eclipse workspace to the eclipse folder.
